@@ -1,5 +1,5 @@
-class Assignment {
-	private String userName;
+class Assignment { //add public to class, add comment to this class
+	private String userName;  //not private?
 	private String cwid;
 	private Code code;
 	private double grade;
@@ -17,7 +17,8 @@ class Assignment {
 	}
 }
 
-class Code {                       //class the store the code and compile it, comment it, and grade it.
+class Code {                       //class that store the code and compile it, comment it, and grade it.
+				   //add public to it
 				   /* the teacher and TAs could access and run the method in this class 
 					while the student role could not run this. 
 				   */ 
@@ -42,7 +43,7 @@ class Code {                       //class the store the code and compile it, co
 		this.sourceCode = sourceCode;
 	}
 
-	public void compile() {         // compile the code using cmd
+	public void compile() {         // compile the code using cmd, write it in a class and then inherit and rewrite this method .
 		if (code == ".java") {
 
 		} else if (code == ".cpp") {
@@ -61,14 +62,14 @@ class Code {                       //class the store the code and compile it, co
 		String str = this.getSourceCode();
 		// display the source code.
 	}
-	public double score(double score) {
+	public double score(double score) { //setScore()?
 		this.score = score;
 		// allow the grader to grade the code based on the result. 
 	}
 	public void setComments() {
 		// allow the grader to comment the code and write the comment into a file. 
 	}
-	public void grade() {
+	public void grade() { //just use temp = this.getScore();
 		double temp = 0.0;
 		temp = this.getScore();
 		// update the grade file 
