@@ -1,3 +1,4 @@
+import java.io.*;
 class JavaCode extends Code {
 	JavaCode() {
 		super();
@@ -16,7 +17,21 @@ class JavaCode extends Code {
 	}
 	public void compile() {         // compile the code using cmd
 	}
-	public void display() {                     //** Interface 3 to plagiarism team.
+	public void display() {  
+		public void display() {  
+		try {
+			FileInputStream fstream = new FileInputStream("/Users/gingerbread/Documents/C_automaticHW/Code.java");
+			DataInputStream in = new DataInputStream(fstream);
+			BufferedReader br = new BufferedReader(new InputStreamReader(in));
+			String strLine;
+
+			while ((strLine = br.readLine()) != null) {
+				System.out.println(strLine);
+			}
+			in.close();
+		} catch (Exception e) {
+			System.err.println("Error: " + e.getMessage());
+		}                                    //** Interface 3 to plagiarism team.
 		//String str = this.getSourceCode();
 		// display the source code.
 	}
