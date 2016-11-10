@@ -69,16 +69,14 @@ class JavaCode extends Code {
 	public void update() throws IOException { 
 		FileWriter comt = new FileWriter("comment.txt");
 		BufferedWriter comWriter = new BufferedWriter(comt);
-		bufwc.write(this.comment);
-		//bufwc.newLine();
-		//bufwc.flush();
-		//bufwc.close();
+		comWriter.write(this.comment);
+		comWriter.flush();
+		comWriter.close();
 		FileWriter grad = new FileWriter("grade.txt");
 		BufferedWriter gradWriter = new BufferedWriter(grad);
-		bufwg.write(this.grade);
-		//bufwg.newLine();
-		bufwg.flush();
-		bufwg.close();
+		gradWriter.write(this.grade + "");
+		gradWriter.flush();
+		gradWriter.close();
 		// update the comments file and grade file.
 		// the graph group use the grade file to read and graph it  ** Interface 2
 	}  
