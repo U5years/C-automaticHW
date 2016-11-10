@@ -1,27 +1,32 @@
-//class 
+/*
+* This is an abstract class to be extended.
+* In this week, our team complete the methods in this class in different files and we will merge them together later. 
+*/
 abstract class Code {
 	private double score;
-	private String sourceCode;
+	private String path;
 	private String comment;
 
-	Code() {}
+	code() {}
 	public void compile() {         // compile the code using cmd
 	}
-	public void display() {                     //** Interface 3 to plagiarism team.
-		//String str = this.getSourceCode();
-		// display the source code.
+	//display the code 
+	public void display() {  
+		
 	}
+	// allow the grader to comment the code and write the comment into a file. 
 	public void setComments() {
-		// allow the grader to comment the code and write the comment into a file. 
+		
 	}
+	// update the grade file 
 	public void grade() {
-		double temp = this.getScore();
-		// update the grade file 
+		
 	}
-	public void update() throws IOException {   
-		// update the comments file and grade file.
-		// the graph group use the grade file to read and graph it  ** Interface 2
+	// update the comments file and grade file.
+	public void update() {   
+
 	}
 }
+
 
 
