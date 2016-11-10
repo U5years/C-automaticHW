@@ -1,3 +1,4 @@
+//This class is to remind us what we need to interact with the un-zip group about the code part.
 class Assignment {
 	private String userName;
 	private String cwid;
