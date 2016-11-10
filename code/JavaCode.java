@@ -1,5 +1,12 @@
 import java.io.*;
+import java.util.*;
 class JavaCode extends Code {
+	private String path;
+	private double score;
+	private String comments;
+	public String getPath() {
+		String 
+	}
 	JavaCode() {
 		super();
 	}
@@ -20,7 +27,7 @@ class JavaCode extends Code {
 	public void display() {  
 		public void display() {  
 		try {
-			FileInputStream fstream = new FileInputStream("/Users/gingerbread/Documents/C_automaticHW/Code.java");
+			FileInputStream fstream = new FileInputStream(this.getPath());
 			DataInputStream in = new DataInputStream(fstream);
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			String strLine;
@@ -39,14 +46,42 @@ class JavaCode extends Code {
 		this.score = score;
 		// allow the grader to grade the code based on the result. 
 	}
+	
 	public void setComments() {
+			Scanner input = new Scanner(System.in);
+			System.out.print("Please enter the comments: ");
+			this.comment = input.nextLine();
+			//System.out.println("The comment you set is " + comment + " (enter t/T for Ture or f/F for False).");
+			//repeatChar = input.next();
 		// allow the grader to comment the code and write the comment into a file. 
 	}
 	public void grade() {
-		double temp = this.getScore();
-		// update the grade file 
+		String repeatChar = "";
+		do{
+			Scanner input = new Scanner(System.in);
+			System.out.print("Please enter the grade: ");
+			this.score = input.nextDouble();
+			System.out.println("The grade you set is " + score + " (enter t/T for Ture or f/F for False).");
+			repeatChar = input.next();
+		} while (repeatChar.charAt(0) == 'F' || repeatChar.charAt(0) == 'f');
+		// allow the grader to comment the code and write the comment into a file. 
 	}
-	public void update() {   
+	public void update() throws IOException { 
+		FileWriter comt = new FileWriter("comment.txt");
+		BufferedWriter comWriter = new BufferedWriter(comt);
+		bufwc.write(this.comment);
+		//bufwc.newLine();
+		//bufwc.flush();
+		//bufwc.close();
+		FileWriter grad = new FileWriter("grade.txt");
+		BufferedWriter gradWriter = new BufferedWriter(grad);
+		bufwg.write(this.grade);
+		//bufwg.newLine();
+		bufwg.flush();
+		bufwg.close();
+		// update the comments file and grade file.
+		// the graph group use the grade file to read and graph it  ** Interface 2
+	}  
 		// update the comments file and grade file.
 		// the graph group use the grade file to read and graph it  ** Interface 2
 	}
