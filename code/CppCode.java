@@ -25,13 +25,40 @@ class CppCode extends Code {
 		// allow the grader to grade the code based on the result. 
 	}
 	public void setComments() {
+		String repeatChar = "t";
+		do{
+			Scanner input = new Scanner(System.in);
+			System.out.print("Please enter the comments: ");
+			comment = input.nextLine();
+			System.out.println("The comment you set is " + comment + " (enter t/T for Ture or f/F for False).");
+			repeatChar = input.next();
+		}while(repeatChar.charAt(0) == 'F' || repeatChar.charAt(0) == 'f');
 		// allow the grader to comment the code and write the comment into a file. 
 	}
 	public void grade() {
-		double temp = this.getScore();
+		String repeatChar = "t";
+		do{
+			Scanner input = new Scanner(System.in);
+			System.out.print("Please enter the grade: ");
+			score = input.nextDouble();
+			System.out.println("The grade you set is " + score + " (enter t/T for Ture or f/F for False).");
+			repeatChar = input.next();
+		}while(repeatChar.charAt(0) == 'F' || repeatChar.charAt(0) == 'f');
 		// update the grade file 
 	}
-	public void update() {   
+	public void update() throws IOException {
+		FileWriter fwc = new FileWriter("comment.txt");
+		BufferedWriter bufwc = new BufferedWriter(fw);
+		bufwc.write(comment);
+		bufwc.newLine();
+		bufwc.flush();
+		bufwc.close();
+		FileWriter fwg = new FileWriter("grade.txt");
+		BufferedWriter bufwg = new BufferedWriter(fw);
+		bufwg.write(grade);
+		bufwg.newLine();
+		bufwg.flush();
+		bufwg.close();
 		// update the comments file and grade file.
 		// the graph group use the grade file to read and graph it  ** Interface 2
 	}
