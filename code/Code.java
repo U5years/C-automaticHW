@@ -18,7 +18,7 @@ abstract class Code {
 		double temp = this.getScore();
 		// update the grade file 
 	}
-	public void update() {   
+	public void update() throws IOException {   
 		// update the comments file and grade file.
 		// the graph group use the grade file to read and graph it  ** Interface 2
 	}
